@@ -1,4 +1,4 @@
-package main.me.grimmeisen.program1;
+package main.le.grimmeisen.program1;
 
 public class AddThread extends Thread {
     private final MinHeap heap;

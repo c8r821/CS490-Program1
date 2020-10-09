@@ -1,4 +1,4 @@
-package main.me.grimmeisen.program1;
+package main.le.grimmeisen.program1;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;

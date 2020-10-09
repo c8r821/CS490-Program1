@@ -1,7 +1,7 @@
-package test.me.grimmeisen.program1;
+package test.le.grimmeisen.program1;
 
-import main.me.grimmeisen.program1.MinHeap;
-import main.me.grimmeisen.program1.Node;
+import main.le.grimmeisen.program1.MinHeap;
+import main.le.grimmeisen.program1.Node;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

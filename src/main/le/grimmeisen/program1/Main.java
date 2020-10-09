@@ -1,4 +1,4 @@
-package main.me.grimmeisen.program1;
+package main.le.grimmeisen.program1;
 
 public class Main {
     public static final long RUN_SLEEP_INTERVAL = 1000;
