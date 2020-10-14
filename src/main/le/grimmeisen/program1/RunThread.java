@@ -3,23 +3,49 @@ package main.le.grimmeisen.program1;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * The RunThread class acts as the consumer for threaded tasks
+ */
 public class RunThread extends Thread {
+    /**
+     * A reference to the synchronized task heap object
+     */
     private final MinHeap heap;
+
+    /**
+     * The consumer's name, used for identification
+     */
     private final String name;
+
+    /**
+     * The duration the consumer should wait between checks for work
+     */
     private final long sleepInterval;
 
+    /**
+     * A shared flag that indicates the producers completion status
+     */
     private volatile boolean hasNewWork = true;
 
+    /**
+     * Parameterized constructor that allows for setting all configurations
+     */
     public RunThread(String name, MinHeap heap, long sleepInterval) {
         this.name = name;
         this.heap = heap;
         this.sleepInterval = sleepInterval;
     }
 
+    /**
+     * Method that allows the main thread to indicate the producer has finished its work
+     */
     public void noNewWork() {
         hasNewWork = false;
     }
 
+    /**
+     * The thread entry-point, will execute tasks added to the heap by order of priority, waiting if no new work is present
+     */
     @Override
     public void run() {
         while (hasNewWork || !heap.isEmpty()) {
