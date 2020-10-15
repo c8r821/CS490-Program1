@@ -60,10 +60,10 @@ public class RunThread extends Thread {
             try {
                 sleep(process.getTimeslice());
             } catch (InterruptedException e) {
-                System.out.printf("%s failed to complete process %s with error message: %s\n", name, process.toString(), e.getMessage());
+                System.out.printf(" - %s failed to complete process %s with error message: %s\n", name, process.toString(), e.getMessage());
             }
 
-            System.out.printf("%s completed process %s at time %s\n", name, process.toString(), LocalTime.now().format(DateTimeFormatter.ISO_TIME));
+            System.out.printf(" - %s completed process %s at time %s\n", name, process.toString(), LocalTime.now().format(DateTimeFormatter.ISO_TIME));
         }
     }
 }

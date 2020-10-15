@@ -1,5 +1,8 @@
 package main.le.grimmeisen.program1;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * The AddThread class acts as the producer for threaded tasks
  */
@@ -67,13 +70,15 @@ public class AddThread extends Thread {
     public void run() {
         for (int batch = 0; batch < batchNum; batch++) {
             for (int i = 0; i < batchSize; i++) {
-                heap.push(
-                    new Node(
-                        pid++,
-                        (int) Math.floor(Math.random() * priorityMax + priorityMin),
-                        (long) Math.floor(Math.random() * sleepMax + sleepMin)
-                    )
+                Node process = new Node(
+                    pid++,
+                    (int) Math.floor(Math.random() * priorityMax + priorityMin),
+                    (long) Math.floor(Math.random() * sleepMax + sleepMin)
                 );
+
+                heap.push(process);
+
+                System.out.printf(" + Producer added process %s at time %s\n", process.toString(), LocalTime.now().format(DateTimeFormatter.ISO_TIME));
             }
 
             try {
