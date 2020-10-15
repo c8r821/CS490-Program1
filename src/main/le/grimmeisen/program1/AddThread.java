@@ -88,5 +88,6 @@ public class AddThread extends Thread {
                 break;
             }
         }
+        System.out.println(" ++ Producer has completed its tasks.");
     }
 }

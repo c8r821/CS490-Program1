@@ -41,6 +41,7 @@ public class RunThread extends Thread {
      */
     public void noNewWork() {
         hasNewWork = false;
+        System.out.printf(" -- %s has been notified of producer completion\n", name);
     }
 
     /**
@@ -65,5 +66,6 @@ public class RunThread extends Thread {
 
             System.out.printf(" - %s completed process %s at time %s\n", name, process.toString(), LocalTime.now().format(DateTimeFormatter.ISO_TIME));
         }
+        System.out.printf(" -- %s has completed its tasks\n", name);
     }
 }
